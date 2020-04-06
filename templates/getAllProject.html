@@ -1,0 +1,20 @@
+{% extends 'library.html' %}
+{% block content %}
+<div class="card-columns">
+    {% for p in shelf %}
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ p.nom_du_projet }}</h5>
+    <p class="card-text">{{ p.description }}</p>
+   <div class="card-footer bg-transparent border-dark">
+   <p class="card-title">{{p.createur.email}}</p>
+   <center>
+       <a href="updatePorject/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'>edit</a>
+       <a href="deleteorject/{{p.id}}" class="btn btn-danger" id = '{{p.id}}'>delete</a>
+    </center>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+</div>
+{% endblock %}
